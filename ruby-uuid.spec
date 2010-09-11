@@ -11,6 +11,7 @@ License:	MIT
 Group:		Development/Tools
 Source0:	http://download.github.com/%{gitauthor}-%{gitname}-v%{version}-0-g%{gitrev}.tar.gz
 # Source0-md5:	0d4aebbd649d4ca30a96edc1fa46ea1d
+Patch0:		%{name}-nogems.patch
 URL:		http://github.com/assaf/uuid
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby
@@ -27,6 +28,7 @@ distributed applications.
 
 %prep
 %setup -q -n %{gitauthor}-%{gitname}-%{gitrev}
+%patch0 -p1
 cp %{_datadir}/setup.rb .
 ruby setup.rb config \
 	--installdirs=std
