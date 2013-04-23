@@ -7,6 +7,7 @@ License:	MIT
 Group:		Development/Tools
 Source0:	http://gems.rubyforge.org/gems/%{pkgname}-%{version}.gem
 # Source0-md5:	749430cac002a05e99d7ae0fb835f78a
+Patch0:	nogems.patch
 URL:		http://github.com/assaf/uuid
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.656
@@ -20,6 +21,9 @@ distributed applications.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
+%patch0 -p1
+
+%{__sed} -i -e 's,@VERSION@,%{version},' lib/uuid.rb
 
 %install
 rm -rf $RPM_BUILD_ROOT
