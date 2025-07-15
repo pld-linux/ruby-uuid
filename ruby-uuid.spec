@@ -21,7 +21,7 @@ distributed applications.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %{__sed} -i -e 's,@VERSION@,%{version},' lib/uuid.rb
 
