@@ -2,7 +2,7 @@
 Summary:	Ruby interface to Git
 Name:		ruby-%{pkgname}
 Version:	2.3.7
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Tools
 Source0:	http://gems.rubyforge.org/gems/%{pkgname}-%{version}.gem
